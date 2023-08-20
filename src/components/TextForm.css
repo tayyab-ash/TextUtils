@@ -1,0 +1,8 @@
+.white::placeholder{
+    color: white;
+    opacity: 0.5; 
+}
+.black::placeholder{
+    color: black;
+    opacity: 0.5;
+}
