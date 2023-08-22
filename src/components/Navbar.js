@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
 
@@ -9,29 +9,32 @@ export default function Navbar(props) {
         className={`navbar navbar-expand-lg navbar-${props.theme} bg-${props.navBg}`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             {props.title}
-          </a>
+          </Link>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/about">
                   {props.aboutText}
                 </Link>
-              </li> */}
+              </li>
             </ul>
             {/* <button className="btn btn-primary" onClick={props.func}>change</button> */}
 
-            <div class={`form-check text-${
+            <div class={`form-check mx-2 text-${
                 props.navBg === "light" ? "black" : "light"
               }`}>
               <input
-                class="form-check-input"
+                class="form-check-input "
                 type="radio"
                 name="flexRadio"
                 id="flexRadioDefault"
@@ -64,7 +67,7 @@ export default function Navbar(props) {
               </label>
             </div>
             <div
-              class={`form-check text-${
+              class={`form-check mx-2 text-${
                 props.navBg === "light" ? "black" : "light"
               }`}
             >
@@ -103,7 +106,7 @@ export default function Navbar(props) {
             </div>
 
             <div
-              className={`form-check form-switch text-${
+              className={`form-check mx-2 form-switch text-${
                 props.navBg === "light" ? "black" : "light"
               }`}
             >

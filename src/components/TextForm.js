@@ -102,25 +102,23 @@ export default function TextForm(props) {
               color: props.mode === "light" ? "black" : "white",
             }}
           ></textarea>
-          <button className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mt-2`} onClick={upperCase}>
+          <button disabled={text.length===0} className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mt-2 mx-1`} onClick={upperCase}>
             Upper Case
           </button>
-          <button className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mt-2 mx-2`} onClick={lowerCase}>
+          <button disabled={text.length===0} className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mt-2 mx-1`} onClick={lowerCase}>
             Lower Case
           </button>
-          <button className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mt-2`} onClick={sentenceCase}>
+          <button disabled={text.length===0} className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mt-2 mx-1`} onClick={sentenceCase}>
             Sentence Case
           </button>
-          <button className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mt-2 mx-2`} onClick={removeSpace}>
+          <button disabled={text.length===0} className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mt-2 mx-1`} onClick={removeSpace}>
             Remove Extra Spaces
           </button>
-          <button className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mt-2`} onClick={copyText}>
+          <button disabled={text.length===0} className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mt-2 mx-1`} onClick={copyText}>
             Copy
           </button>
-
-          <button
-            className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mt-2`}
-            style={{ float: "right" }}
+          <button disabled={text.length===0}
+            className={`btn btn-${props.mode==='dark'? 'secondary':props.navBg} mx-1 mt-2`}
             onClick={clear}
           >
             Clear
@@ -167,6 +165,7 @@ export default function TextForm(props) {
                 className="btn btn-outline-secondary"
                 type="button"
                 onClick={replaceText}
+                disabled={withR.length===0}
                 style={{
                   backgroundColor:
                     props.mode === "light" ? "white" : "rgb(84, 93, 113)",

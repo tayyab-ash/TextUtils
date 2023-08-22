@@ -2,15 +2,16 @@
 import "./App.css";
 import "./components/TextForm.css"
 import Alert from "./components/Alert";
-// import AboutMe from "./components/AboutMe";
+import AboutMe from "./components/AboutMe";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React , { useState } from 'react'
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
@@ -89,25 +90,26 @@ function App() {
     })
     setTimeout(() => {
       setAlert(null)
-    }, 1000);
+    }, 1500);
   }
 
 
   return (
     <>
-    {/* <Router> */}
+    <Router>
     {/* change={changeColor} func={func}  use this in the navbar and textform if using the above fuction and hooks */}
       <Navbar title='TextUtils' mode={mode} toggleMode={toggleMode} disable={disableButtons} navBg={navBg} theme={theme} selectedColor={selectedColor} handleColorChange={handleColorChange}/> 
       {/* <Navbar aboutText="About us"/> Default Prop will be applied in case no Title is configured */}
       <Alert alert={alert}/>
       <div className="container my-3">
-      {/* <Routes> */}
-          {/* <Route path="/about" element={<AboutMe mode={mode} />} />  */}
-          {/* <Route path="/" element={<TextForm showAlert={showAlert} heading='Enter your text' changePtext={changePtext} navBg={navBg} mode={mode} toggleMode={toggleMode}/>} /> */}
-          {<TextForm showAlert={showAlert} heading='Enter your text' changePtext={changePtext} navBg={navBg} mode={mode} toggleMode={toggleMode}/>} 
-        {/* </Routes> */}
+      <Routes>
+          <Route path="/about" element={<AboutMe mode={mode} />} /> 
+          {/* <AboutMe/> */}
+          <Route path="/" element={<TextForm showAlert={showAlert} heading='Enter your text' changePtext={changePtext} navBg={navBg} mode={mode} toggleMode={toggleMode}/>} />
+          {/* {<TextForm showAlert={showAlert} heading='Enter your text' changePtext={changePtext} navBg={navBg} mode={mode} toggleMode={toggleMode}/>}  */}
+        </Routes>
       </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }
