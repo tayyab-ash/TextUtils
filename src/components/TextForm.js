@@ -53,7 +53,7 @@ export default function TextForm(props) {
 
   //Function to count words
   const updateWordCount = (newText) => {
-    const wordsArr = newText.split(" ").filter((word) => word !== ""); // Filter out empty strings
+    const wordsArr = newText.split(/\s+/).filter((word) => word !== ""); // Filter out empty strings
     setWordCount(wordsArr.length);
   };
 
